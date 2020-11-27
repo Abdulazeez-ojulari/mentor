@@ -1,4 +1,3 @@
-
 <?php
 session_start();
     include("include/init.php");
@@ -63,20 +62,30 @@ if(isset($_POST['signup'])){
 		            $mentors->setvalues($name, $email, $password, $dob);
 		            
 		            $isinsert = $mentors->insert();
-		  
 
-		            
-		            $name               = "";
-		                $email              = "";
-		                $password           = "";
-		                $confirm_password   = "";
-		                $dob                = "";
-		                $usertype 			= "";
+		            if($isinsert){
+		            	if($mentors->Query($email)){
 
+					          if($mentors->CountRows() > 0){
 
-				            $infomesg .= "Logined";
-				            $_SESSION['idis'] = $idis;
-				            header("location:http://localhost/mentor/mentor.php");
+					              $row = $mentors->Single();
+					              $password_real   = $row[3];
+					              $idis   = $row[0];
+
+					          }
+
+				              if($errormsg == ""){
+
+				                  $infomesg .= "Logined";
+				                  $_SESSION['idis'] = $idis;
+				                  header("location:mentor.php");
+					                  
+					           }
+
+					        }
+		            }else{
+		            	$errormsg .= "Somthing Went Wrong. Please Try Again<br>";
+		            }
 		            
 		     }
 
@@ -124,48 +133,49 @@ if(isset($_POST['signup'])){
 		            $isinsert = $mentees->insert();
 
 		            
-		            $name               = "";
-		                $email              = "";
-		                $password           = "";
-		                $confirm_password   = "";
-		                $dob                = "";
-		                $usertype 			= "";
+		            if($isinsert){
+		            	if($mentees->Query($email)){
 
+				          if($mentees->CountRows() > 0){
 
-				            $infomesg .= "Logined";
-				            $_SESSION['idis'] = $idis;
-				            header("location:http://localhost/mentor/mentee.php");
+				              $row = $mentees->Single();
+				              $password_real   = $row[3];
+				              $idis   = $row[0];
+
+				          }
+				              if($errormsg == ""){
+
+				                  $infomesg .= "Logined";
+				                  $_SESSION['idis'] = $idis;
+				                  header("location:mentee.php");
+				                  
+				           }
+
+				          }
+		            }else{
+		            	$errormsg .= "Somthing Went Wrong. Please Try Again<br>";
+		            }
 		            
 		     }
         }
-   
-
-
-   }
-
-
-
+}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Create Account  |  Career Couching</title>
-	
-	<?php
+<?php
   
   include 'include/top.php';
-  
-  ?>  
+?>  
   
 </head>
 <body>
-
-
-  <?php
+<?php
 
   include 'include/header.php';
 
-  ?>
+?>
 
 	
 	

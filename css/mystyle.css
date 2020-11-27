@@ -153,17 +153,13 @@ width: 2.5rem;
 
 
 
-.user-nav {
-align-self: stretch;
-display: flex;
-align-items: center; 
-}
+.user-nav {align-self: stretch;display: flex;align-items: center;color: #f1f1f6;}
 .user-nav > * {
     padding: 0 1rem;
     cursor: pointer;
     height: 100%;
     display: flex;
-    color: #f1f1f6;
+    /* color: #f1f1f6; */
     align-items: center;
     }
 .user-nav > *:hover {
@@ -225,7 +221,9 @@ align-items: center;
 .container {
   display: grid;
   grid-template-rows: 100%;
-  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  margin-bottom: 15rem;
+  }
   @media only screen and (max-width: 62.5em) {
     .container {
       grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
@@ -255,10 +253,15 @@ align-items: center;
 .heading-3 {
   font-size: 1.6rem;
   color: #c69963;
-  text-transform: uppercase; }
+  text-align: center;
+  text-transform: uppercase;
+  }
 
 .heading-4 {
-  font-size: 1.9rem; }
+  font-size: 1.9rem;
+  text-align: center;
+  padding: 0.2rem 1rem;
+  }
   .heading-4--light {
     color: #f9f7f6; }
   .heading-4--dark {
@@ -267,28 +270,32 @@ align-items: center;
 
 
 .main {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-color: #54483A;
-  background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(../images/staff1.jpg);
-  background-size: cover;
-  background-position: center;
+    height: 100%;
+    width: 100vw;
+    background-color: #54483A;
+    background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93));
+    background-size: 100% 100%;
+    background-position: center;
   }
 
   .con{
-    padding: 4rem;
+    /* padding: 4rem; */
+    /* width: 100%; */
   }
   @media only screen and (max-width: 50em) {
     .main {
-      grid-column: 1 / -1; } }
+      /* grid-column: 1 / -1; */
+      } }
   @media only screen and (max-width: 37.5em) {
     .main {
-      padding: 5rem; } }
+      /* padding: 5rem; */
+      } }
   .main__logo {
     height: 5rem;
+    top: 1rem;
     justify-self: center;
-    padding-left: 2rem;
+    padding-left: 1rem;
+    position: sticky;
     }
   .main__btn {
     align-self: start;
@@ -307,10 +314,11 @@ align-items: center;
       background-color: currentColor; }
   .main__seenon-logos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(4, 1fr); */
     grid-column-gap: 3rem;
     justify-items: center;
-    align-items: center; }
+    align-items: center;
+    }
     .main__seenon-logos img {
       max-height: 2.5rem;
       max-width: 100%;
@@ -319,10 +327,10 @@ align-items: center;
 .btn{
     display: block;
     margin: 5px auto;
-    
     border: none;
     border-radius: 0.5rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .btn-full{
@@ -494,6 +502,7 @@ align-items: center;
 
 .link{
   text-decoration: none;
+  color: #f1f1f6;
 }
 
 .shoppingTable{
@@ -666,14 +675,14 @@ align-items: center;
 }
 
 footer{
-  padding-top: 8rem;
+  /* padding-top: 8rem; */
   display: grid;
-  height: 20vh;
+  height: 4vh;
   width: 100%;
   background-color: #1f2b3a;
   position: fixed;
   bottom: 0;
-  padding: 6rem;
+  padding: 2rem 3rem 7rem;
   color: #f1f1f6;
   font-size: 1.3rem;
 }
@@ -693,3 +702,46 @@ footer{
 .alert-success{
   color: green;
 }
+
+.logout{
+    border: none;
+    padding: 0.5rem;
+}
+
+.top-stories{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 6rem;
+    width: 80vw;
+    margin: auto;
+    padding: 3rem;
+}
+.top-story{
+    border-radius: 1rem;
+    box-shadow: 0 0.1rem 0.5rem 0.1rem #c7c0c047;
+}
+
+.top-story__name{
+    margin: 1rem auto;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #f1f1f6;
+    color: $color-secondary-light;
+}
+
+.top-story__img{
+    width: 100%;
+    height: 28rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    transition: all .6s;
+}
+
+
+
+.top-story__img:hover{
+    transform: scale(1.06, 1.07);
+}
+
+

@@ -47,7 +47,7 @@ class Mentors extends Database{
     }
 
     public function getMenteesMentors($id){
-    $sql = "SELECT * FROM mentorsMentee WHERE mentee_id='$id'";
+    $sql = "SELECT * FROM mentorsmentee WHERE mentee_id='$id'";
 
      return $this->Query = mysqli_query($this->connect(), $sql);
 
@@ -135,6 +135,4 @@ class Mentors extends Database{
 
 
 }
-
-
 ?>

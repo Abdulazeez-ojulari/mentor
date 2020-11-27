@@ -98,6 +98,4 @@ function baseurl(){
 			return $worlst;		
 			
 		}
-
-
 ?>

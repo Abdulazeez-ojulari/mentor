@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include("include/init.php");
@@ -39,14 +38,14 @@ if(isset($_POST['loginnow'])){
           }
           else
               {
-                   $errormsg .= "Wr or Password<br>";
+                   $errormsg .= "Wrong Email or Password<br>";
               }
 
               if($errormsg == ""){
 
                   $infomesg .= "Logined";
                   $_SESSION['idis'] = $idis;
-                  header("location:http://localhost/mentor/mentor.php");
+                  header("location:mentor.php");
                   
            }
 
@@ -81,14 +80,14 @@ if(isset($_POST['loginnow'])){
           }
           else
               {
-                   $errormsg .= "W or Password<br>";
+                   $errormsg .= "Wrong Email or Password<br>";
               }
 
               if($errormsg == ""){
 
                   $infomesg .= "Logined";
                   $_SESSION['idis'] = $idis;
-                  header("location:http://localhost/mentor/mentee.php");
+                  header("location:mentee.php");
                   
            }
 
@@ -101,19 +100,7 @@ if(isset($_POST['loginnow'])){
 
          
       }
-
-
-   /*
-       * 
-   */
-
-
-   
-
-   }
-
-
-
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -146,7 +133,7 @@ if(isset($_POST['loginnow'])){
             <nav class="user-nav">
                 
                 <div class="user-nav__user">
-                    <a href="login.php" class="user-nav__user-name link"><h1>Login</h1></a>
+                    <a href="register.php" class="user-nav__user-name link"><h1>Register</h1></a>
                 </div>
             </nav>
         </header>

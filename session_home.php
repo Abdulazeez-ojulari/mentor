@@ -5,6 +5,4 @@
 	if(!(isset($_SESSION['idis']))){
 		header("location:register.php");
 	}
-	
-	
-	?>
+?>

@@ -22,6 +22,10 @@ $result = $mentors->getMentorsbById($mentors_id);
 
 }
 
+if(isset($_POST['logout'])){
+  session_destroy();
+  header("location:register.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +62,12 @@ $result = $mentors->getMentorsbById($mentors_id);
                     <a class="user-nav__user-name link" href="mymentors.php"><h1>My Mentors</h1></a>
                 </div>
                 <div class="user-nav__user">
-                    <a class="user-nav__user-name link"><h1>Logout</h1></a>
+                    <a class="user-nav__user-name link">
+                      <form method='post' action=''>
+                        <input type='hidden' name='logout' value="" />                           
+                        <button type='submit' class="logout"><h1>Log Out</h1></button>
+                      </form>
+                    </a>
                 </div>
             </nav>
         </header>
@@ -95,7 +104,7 @@ $result = $mentors->getMentorsbById($mentors_id);
                                 <div class='cartItemTotal'>
                                     <p>
                                         <form method='post' action=''>
-                                          <input type='hidden' name='mentors_id' value={$results['mentors_id']}/>
+                                          <input type='hidden' name='mentors_id' value='{$results['mentors_id']}'/>
                                           
                                           <button type='submit' class='btn btn-outline btn-bg'>Add</button>
                                         </form>
