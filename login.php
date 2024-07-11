@@ -3,7 +3,7 @@ session_start();
 include("include/init.php");
 
 $errormsg = "";
-$infomesg = "";
+$infomesg = ""
 $usertype = "";
 
 
