@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("include/init.php");
+include("include/int.php");
 
 $errormsg = "";
 $infomesg = ""
